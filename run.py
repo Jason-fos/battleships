@@ -7,9 +7,7 @@ import random
 import sys
 import time
 
-# CPU and player boards, small and big
-player_board_small = [[''] * 6 for x in range(6)]
-cpu_board_small = [[''] * 6 for x in range(6)]
+# CPU and player boards
 player_board_big = [[''] * 9 for x in range(9)]
 cpu_board_big = [[''] * 9 for x in range(9)]
 
@@ -18,8 +16,7 @@ coordinates = {
     'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8
 }
 # Number of ships and their lengths for boards
-ship_lengths_small = [2, 3, 4, 5]
-ship_lengths_big = [2, 2, 3, 3, 4, 5]
+ship_sizes = [2, 2, 3, 3, 4, 5]
 
 
 def type_fast(string):
@@ -51,6 +48,7 @@ def intro():
     the user needs to see instructions
 
     """
+    type_slow('Welcome to...\n')
     type_fast(
         """
     ____        _   _   _           _     
@@ -63,21 +61,43 @@ def intro():
                                            |_|
     """
     )
-
-    type_slow('Welcome to Battleships!\n')
-    time.sleep(1.2)
+    
     print('')
-    type_slow('Do you need to see the game instructions?\n')
+    time.sleep(1)
+    type_slow('Do you know how to play?\n')
     print('')
     answer = input('Enter Y or N\n').upper()
     print('')
     while True:
         if answer == 'Y':
-            show_instructions()
-        elif answer == 'N':
             start_game()
+        elif answer == 'N':
+            show_instructions()
+            break
         else:
             type_slow('Please enter Y or N\n')
+            answer = input('').upper()
 
 
-intro()
+def show_instructions():
+    """
+    Displays the instructions to the user
+    by reading instuctions.txt file and 
+    printing the lines to the terminal
+
+    """
+    with open('instructions.txt') as f:
+        contents = f.read()
+        print(contents)
+        start_game()
+
+
+show_instructions()
+
+
+def start_game():
+    """
+    This is the main game loop
+
+    """
+    print('start game function working')
