@@ -8,8 +8,8 @@ import sys
 import time
 
 # CPU and player boards
-player_board_big = [[''] * 9 for x in range(9)]
-cpu_board_big = [[''] * 9 for x in range(9)]
+player_board = [[''] * 9 for x in range(9)]
+cpu_board = [[''] * 9 for x in range(9)]
 
 # Dictionary to form key value pairs for board co-ordinates
 coordinates = {
@@ -86,18 +86,37 @@ def show_instructions():
     printing the lines to the terminal
 
     """
-    with open('instructions.txt') as f:
-        contents = f.read()
+    with open('instructions.txt') as file:
+        contents = file.read()
         print(contents)
         start_game()
 
 
 def display_board(board):
+    """
+    Prints the boards to the terminal
+
+    """
     print('a b c d e f g h i')
+    print('*********************')
     row_no = 1
     for row in board:
-        print('%d|%s|' % (row_no, '|'.join(row)))
+        print(' %d| %s|' % (row_no, '| '.join(row)))
         row_no += 1
+
+
+def add_ships(board):
+    """
+    Adds the ships to both player and cpu boards
+
+    """
+    for ship in ship_sizes:
+        while True:
+            if board == cpu_board:
+                axis, row, col = random.choice(['X', 'Y']), \
+                    random.randint(0, 8), random.randint(0, 8)
+                
+        
 
 
 def start_game():
@@ -105,4 +124,9 @@ def start_game():
     This is the main game loop
 
     """
-    print('start game function working')
+    display_board(cpu_board)
+    display_board(player_board)
+    add_ships(cpu_board)
+    add_ships(player_board)
+
+intro()
