@@ -109,6 +109,7 @@ def display_board(board):
 def add_ships(board):
     """
     Adds the ships to both player and cpu boards
+    whilst checking that they fit and have no overlaps
 
     """
     for ship in ship_sizes:
@@ -118,24 +119,24 @@ def add_ships(board):
                     random.randint(0, 9), random.randint(0, 9)
                 if check_ship(ship, row, col, axis):
                     if not ship_ovlap(board, row, col, axis, ship):
-                        if axis == "X":
+                        if axis == 'X':
                             for i in range(col, col + ship):
-                                board[row][i] = "@"
+                                board[row][i] = '@'
                         else:
                             for i in range(row, row + ship):
-                                board[i][col] = "@"
+                                board[i][col] = '@'
                         break
             if board == player_board:
-                axis, row, col = random.choice(["X", "Y"]), \
+                axis, row, col = random.choice(['X', 'Y']), \
                     random.randint(0, 9), random.randint(0, 9)
                 if check_ship(ship, row, col, axis):
                     if not ship_ovlap(board, row, col, axis, ship):
-                        if axis == "X":
+                        if axis == 'X':
                             for i in range(col, col + ship):
-                                board[row][i] = "@"
+                                board[row][i] = '@'
                         else:
                             for i in range(row, row + ship):
-                                board[i][col] = "@"
+                                board[i][col] = '@'
                         break
 
 
@@ -171,6 +172,19 @@ def ship_ovlap(board, row, col, axis, ship):
             if board[i][col] == '@':
                 return True
     return False
+
+def count_hits(board):
+    """
+    The count_hits function counts successful
+    hits from the player and cpu.
+
+    """
+    count = 0
+    for row in board:
+        for col in row:
+            if col == 'X':
+                count += 1
+    return count
 
 
 def start_game():
