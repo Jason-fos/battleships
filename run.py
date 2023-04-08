@@ -97,8 +97,8 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('a b c d e f g h i')
-    print('*********************')
+    print('   a b c d e f g h i')
+    print('  *******************')
     row_no = 1
     for row in board:
         print(' %d| %s|' % (row_no, '| '.join(row)))
@@ -115,8 +115,26 @@ def add_ships(board):
             if board == cpu_board:
                 axis, row, col = random.choice(['X', 'Y']), \
                     random.randint(0, 8), random.randint(0, 8)
-                
-        
+                if check_ship(ship, row, col, axis):
+                    if not ship_ovlap(board, row, col, axis, ship):
+                        if axis == 'X':
+                            for i in range(col, col + ship):
+                                board[row][i] = '@'
+                        else:
+                            for i in range(row, row + ship):
+                                board[i][col] = '@'
+                        break
+            if board == player_board:
+                axis, row, col = random.choice(['X', 'Y']), \
+                    random.randint(0, 8), random.randint(0, 8)
+                if check_ship(ship, row, col, axis):
+                    if not ship_ovlap(board, row, col, axis, ship):
+                        if axis == 'X':
+                            for i in range(col, col + ship):
+                                board[row][i] = '@'
+                        else:
+                            for i in range(row, row + ship):
+                                board[i][col] = '@'
 
 
 def start_game():
@@ -125,8 +143,10 @@ def start_game():
 
     """
     display_board(cpu_board)
+    print('')
     display_board(player_board)
     add_ships(cpu_board)
     add_ships(player_board)
+
 
 intro()
