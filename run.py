@@ -92,7 +92,12 @@ def show_instructions():
         start_game()
 
 
-show_instructions()
+def display_board(board):
+    print('a b c d e f g h i')
+    row_no = 1
+    for row in board:
+        print('%d|%s|' % (row_no, '|'.join(row)))
+        row_no += 1
 
 
 def start_game():
