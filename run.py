@@ -137,6 +137,23 @@ def add_ships(board):
                                 board[i][col] = '@'
 
 
+def check_ship(ship_sizes, row, col, axis):
+    """
+    Checks if the ship fits on the board
+
+    """
+    if axis == 'X':
+        if col + ship_sizes > 9:
+            return False
+        else:
+            return True
+    else:
+        if row + ship_sizes > 9:
+            return False
+        else:
+            return True
+
+
 def start_game():
     """
     This is the main game loop
