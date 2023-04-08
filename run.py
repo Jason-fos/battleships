@@ -52,24 +52,32 @@ def intro():
 
     """
     type_fast(
-        """\
-    \u001B[31m
-    ____        _   _   _           _     _
+        """
+    ____        _   _   _           _     
    |  _ \      | | | | | |         | |   (_)
    | |_) | __ _| |_| |_| | ___  ___| |__  _ _ __  ___
    |  _ < / _` | __| __| |/ _ \/ __| '_ \| | '_ \/ __|
    | |_) | (_| | |_| |_| |  __/\__ \ | | | | |_) \__ |
    |____/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/|___/
-                                         | |
-                                         |_|
-    \u001b[0m
+                                           | |
+                                           |_|
     """
     )
 
     type_slow('Welcome to Battleships!\n')
-    time.sleep(1.5)
+    time.sleep(1.2)
+    print('')
     type_slow('Do you need to see the game instructions?\n')
-    answer = input('Enter "Y" or "N"\n').upper()
+    print('')
+    answer = input('Enter Y or N\n').upper()
+    print('')
+    while True:
+        if answer == 'Y':
+            show_instructions()
+        elif answer == 'N':
+            start_game()
+        else:
+            type_slow('Please enter Y or N\n')
 
 
 intro()
