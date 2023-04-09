@@ -175,12 +175,27 @@ def players_guess(board):
     elif board[row][col] == '@':
         print('You hit an enemy ship!\n')
         board[row][col] = 'X'
-    elif board[row][col] == 'O':
+    else:
         print('You already tried those co-ords!')
         row = int(input('Try again, row number 1-9\n'))
         col = int(input('Try again, column number 1-9\n'))
-    else:
-        print('Please enter correct values\n')
+
+
+def cpu_guess(board):
+    """
+    Function to allow the computer
+    to choose random x an y coordinates
+    to hit players ships
+
+    """
+    row = random.randint(0, len(board) - 1)
+    col = random.randint(0, len(board) - 1)
+    if board[row][col] == '.':
+        type_slow('CPU missed target!')
+        board[row][col] = 'O'
+    elif board[row][col] == '@':
+        type_slow('CPU hit one of your ships!')
+        board[row][col] = 'X'
 
 
 def start_game():
@@ -198,6 +213,7 @@ def start_game():
     print('')
     display_board(player_board)
     players_guess(cpu_board)
+    cpu_guess(player_board)
 
 
 # intro()
