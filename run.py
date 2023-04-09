@@ -19,9 +19,6 @@ cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 # Ship sizes
 the_ships = [2, 2, 3, 4, 5]
 
-# Missiles/ number of turns variable
-missiles = 20
-
 
 def type_fast(string):
     """
@@ -101,8 +98,8 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('  1 2 3 4 5 6 7 8 9')
-    row_num = 1
+    print('  0 1 2 3 4 5 6 7 8')
+    row_num = 0
     for row in board:
         print(row_num, ' '.join(row))
         row_num += 1
@@ -170,10 +167,9 @@ def player_guess(board):
     the computers ships on the grid
 
     """
-    row = int(input('Enter target row 1-9\n'))
-    col = int(input('Enter target column 1-9\n'))
+    row = int(input('Enter target row 0-8\n'))
+    col = int(input('Enter target column 0-8\n'))
     if board[row][col] == '.':
-        print('')
         print('You missed!\n')
         board[row][col] = 'O'
     elif board[row][col] == '@':
@@ -181,8 +177,9 @@ def player_guess(board):
         board[row][col] = 'X'
     else:
         print('You already tried those co-ords!\n')
-        row = int(input('Try again, row number 1-9\n'))
-        col = int(input('Try again, column number 1-9\n'))
+        row = int(input('Try again, row number 0-8\n'))
+        col = int(input('Try again, column number 0-8\n'))
+    return board[row][col]
 
 
 def cpu_guess(board):
@@ -195,18 +192,21 @@ def cpu_guess(board):
     row = random.randint(0, len(board) - 1)
     col = random.randint(0, len(board) - 1)
     if board[row][col] == '.':
-        print('')
         type_slow('CPU missed target!\n')
         board[row][col] = 'O'
     elif board[row][col] == '@':
-        print('')
         type_slow('CPU hit one of your ships!\n')
         board[row][col] = 'X'
+    return board[row][col]
 
 
 def start_game():
     """
-    This is the main game loop
+    This is the main game loop it
+    allows the computer and player to
+    take turns guessing coordinates to hit
+    each others ships. The game ends when
+    all ships from one board have been sunk
 
     """
     # Add the ships to the boards
@@ -214,25 +214,59 @@ def start_game():
     add_ships(player_board, the_ships)
 
     # Print the boards to the screen
-    type_slow('CPU Board:\n')
-    print('')
-    display_board(cpu_board)
     print('')
     type_slow('Player Board:\n')
     print('')
     display_board(player_board)
     print('')
+    type_slow('CPU Board:\n')
+    print('')
+    display_board(cpu_board)
 
     # Player and computers turns loop
     while True:
+        time.sleep(0.3)
         player_guess(cpu_board)
         if count_hits(cpu_board) == 14:
             type_slow('You win! Well done captain!\n')
+            print('')
+            type_slow('Want to play again?\n')
+            answer = input('Y or N \n').upper()
+            while True:
+                if answer == 'Y':
+                    start_game()
+                elif answer == 'N':
+                    type_slow('See you next time captain!\n')
+                    return False
+                else:
+                    type_slow('Please enter Y or N')
+                    input('').upper()
         else:
+            time.sleep(0.3)
             cpu_guess(player_board)
+            time.sleep(0.3)
+            type_slow('Player Board:\n')
+            print('')
+            display_board(player_board)
+            print('')
+            type_slow('CPU Board:\n')
+            print('')
+            display_board(cpu_board)
             if count_hits(player_board) == 14:
-                print('You lose! They sank all you"re ships')
+                print('You lose! They sank all you"re ships! \n')
+                print('')
+                type_slow('Want to play again?\n')
+                answer = input('Y or N \n').upper()
+                while True:
+                    if answer == 'Y':
+                        start_game()
+                    elif answer == 'N':
+                        type_slow('See you next time captain!\n')
+                        break
+                    else:
+                        type_slow('Please enter Y or N')
+                        input('').upper()
 
 
-intro()
-# start_game()
+# intro()
+start_game()
