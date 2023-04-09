@@ -11,10 +11,10 @@ import time
 player_board = [['.' for _ in range(9)] for _ in range(9)]
 cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 
-# Dictionary to form key value pairs for board co-ordinates
-coordinates = {
-    'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9
-}
+# Dictionary to form key value pairs for board coordinates
+# coordinates = {
+#     'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9
+# }
 
 # Ship sizes
 the_ships = [2, 2, 3, 4, 5]
@@ -98,7 +98,7 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('  a b c d e f g h i')
+    print('  1 2 3 4 5 6 7 8 9')
     row_num = 1
     for row in board:
         print(row_num, ' '.join(row))
@@ -160,6 +160,29 @@ def count_hits(board):
     return count
 
 
+def players_guess(board):
+    """
+    Function to allow the player to
+    input x and y coordinates to target
+    the computers ships on the grid
+
+    """
+    row = int(input('Enter target row 1-9\n'))
+    col = int(input('Enter target column 1-9\n'))
+    if board[row][col] == '.':
+        print('You missed!\n')
+        board[row][col] = 'O'
+    elif board[row][col] == '@':
+        print('You hit an enemy ship!\n')
+        board[row][col] = 'X'
+    elif board[row][col] == 'O':
+        print('You already tried those co-ords!')
+        row = int(input('Try again, row number 1-9\n'))
+        col = int(input('Try again, column number 1-9\n'))
+    else:
+        print('Please enter correct values\n')
+
+
 def start_game():
     """
     This is the main game loop
@@ -174,6 +197,7 @@ def start_game():
     type_slow('Player Board:\n')
     print('')
     display_board(player_board)
+    players_guess(cpu_board)
 
 
 # intro()
