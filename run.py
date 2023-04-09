@@ -19,6 +19,9 @@ cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 # Ship sizes
 the_ships = [2, 2, 3, 4, 5]
 
+# Missiles/ number of turns variable
+missiles = 20
+
 
 def type_fast(string):
     """
@@ -160,7 +163,7 @@ def count_hits(board):
     return count
 
 
-def players_guess(board):
+def player_guess(board):
     """
     Function to allow the player to
     input x and y coordinates to target
@@ -170,13 +173,14 @@ def players_guess(board):
     row = int(input('Enter target row 1-9\n'))
     col = int(input('Enter target column 1-9\n'))
     if board[row][col] == '.':
+        print('')
         print('You missed!\n')
         board[row][col] = 'O'
     elif board[row][col] == '@':
         print('You hit an enemy ship!\n')
         board[row][col] = 'X'
     else:
-        print('You already tried those co-ords!')
+        print('You already tried those co-ords!\n')
         row = int(input('Try again, row number 1-9\n'))
         col = int(input('Try again, column number 1-9\n'))
 
@@ -191,10 +195,12 @@ def cpu_guess(board):
     row = random.randint(0, len(board) - 1)
     col = random.randint(0, len(board) - 1)
     if board[row][col] == '.':
-        type_slow('CPU missed target!')
+        print('')
+        type_slow('CPU missed target!\n')
         board[row][col] = 'O'
     elif board[row][col] == '@':
-        type_slow('CPU hit one of your ships!')
+        print('')
+        type_slow('CPU hit one of your ships!\n')
         board[row][col] = 'X'
 
 
@@ -203,8 +209,11 @@ def start_game():
     This is the main game loop
 
     """
+    # Add the ships to the boards
     add_ships(cpu_board, the_ships)
     add_ships(player_board, the_ships)
+
+    # Print the boards to the screen
     type_slow('CPU Board:\n')
     print('')
     display_board(cpu_board)
@@ -212,9 +221,18 @@ def start_game():
     type_slow('Player Board:\n')
     print('')
     display_board(player_board)
-    players_guess(cpu_board)
-    cpu_guess(player_board)
+    print('')
+
+    # Player and computers turns loop
+    while True:
+        player_guess(cpu_board)
+        if count_hits(cpu_board) == 14:
+            type_slow('You win! Well done captain!\n')
+        else:
+            cpu_guess(player_board)
+            if count_hits(player_board) == 14:
+                print('You lose! They sank all you"re ships')
 
 
-# intro()
-start_game()
+intro()
+# start_game()
