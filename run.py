@@ -9,7 +9,7 @@ import time
 
 # CPU and player boards
 player_board = [['.' for _ in range(9)] for _ in range(9)]
-cpu_board = [['.' for _ in range(9)] for _ in range(9)] 
+cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 
 # Dictionary to form key value pairs for board co-ordinates
 coordinates = {
@@ -62,7 +62,7 @@ def intro():
                                            |_|
     """
     )
-    
+
     print('')
     time.sleep(1)
     type_slow('Do you know how to play?\n')
@@ -83,7 +83,7 @@ def intro():
 def show_instructions():
     """
     Displays the instructions to the user
-    by reading instuctions.txt file and 
+    by reading instuctions.txt file and
     printing the lines to the terminal
 
     """
@@ -120,7 +120,6 @@ def add_ships(board, ships):
             else:
                 row = random.randint(0, len(board) - ship_length)
                 col = random.randint(0, len(board) - 1)
-            
             if location_check(board, row, col, position, ship_length):
                 if position == 'hor':
                     for i in range(col, col + ship_length):
@@ -146,22 +145,6 @@ def location_check(board, row, col, position, ship_length):
                 return False
     return True
 
-# def ship_ovlap(board, row, col, axis, ship):
-#     """
-#     Checks if any ships placed are
-#     going to overlap existing ships
-
-#     """
-#     if axis == 'X':
-#         for i in range(col, col + ship):
-#             if board[row][i] == '@':
-#                 return True
-#     else:
-#         for i in range(row, row + ship):
-#             if board[i][col] == '@':
-#                 return True
-#     return False
-
 
 def count_hits(board):
     """
@@ -182,6 +165,8 @@ def start_game():
     This is the main game loop
 
     """
+    add_ships(cpu_board, the_ships)
+    add_ships(player_board, the_ships)
     type_slow('CPU Board:\n')
     print('')
     display_board(cpu_board)
@@ -189,8 +174,6 @@ def start_game():
     type_slow('Player Board:\n')
     print('')
     display_board(player_board)
-    add_ships(cpu_board, the_ships)
-    add_ships(player_board, the_ships)
 
 
 # intro()
