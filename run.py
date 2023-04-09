@@ -13,11 +13,11 @@ cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 
 # Dictionary to form key value pairs for board co-ordinates
 coordinates = {
-    'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8
+    'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9
 }
 
 # Ship sizes
-ships = [2, 2, 3, 4, 5]
+the_ships = [2, 2, 3, 4, 5]
 
 
 def type_fast(string):
@@ -105,72 +105,62 @@ def display_board(board):
         row_num += 1
 
 
-def add_ships(board):
+def add_ships(board, ships):
     """
     Adds the ships to both player and cpu boards
-    whilst checking that they fit and have no overlaps
+    whilst checking that they fit and don't overlap
 
     """
-    for ship in ship_sizes:
+    for ship_length in ships:
         while True:
-            if board == cpu_board:
-                axis, row, col = random.choice(['X', 'Y']), \
-                    random.randint(0, 8), random.randint(0, 8)
-                if check_ship(ship, row, col, axis):
-                    if not ship_ovlap(board, row, col, axis, ship):
-                        if axis == 'X':
-                            for i in range(col, col + ship):
-                                board[row][i] = '@'
-                        else:
-                            for i in range(row, row + ship):
-                                board[i][col] = '@'
-                        break
-            if board == player_board:
-                axis, row, col = random.choice(['X', 'Y']), \
-                    random.randint(0, 8), random.randint(0, 8)
-                if check_ship(ship, row, col, axis):
-                    if not ship_ovlap(board, row, col, axis, ship):
-                        if axis == 'X':
-                            for i in range(col, col + ship):
-                                board[row][i] = '@'
-                        else:
-                            for i in range(row, row + ship):
-                                board[i][col] = '@'
-                        break
+            position = random.choice(['hor', 'vert'])
+            if position == 'hor':
+                row = random.randint(0, len(board) - 1)
+                col = random.randint(0, len(board) - ship_length)
+            else:
+                row = random.randint(0, len(board) - ship_length)
+                col = random.randint(0, len(board) - 1)
+            
+            if location_check(board, row, col, position, ship_length):
+                if position == 'hor':
+                    for i in range(col, col + ship_length):
+                        board[row][i] = '@'
+                else:
+                    for i in range(row, row + ship_length):
+                        board[i][col] = '@'
+                break
 
 
-def check_ship(ship_sizes, row, col, axis):
+def location_check(board, row, col, position, ship_length):
     """
     Checks if the ship fits on the board
 
     """
-    if axis == 'X':
-        if col + ship_sizes > 9:
-            return False
-        else:
-            return True
+    if position == 'hor':
+        for i in range(col, col + ship_length):
+            if board[row][i] != '.':
+                return False
     else:
-        if row + ship_sizes > 9:
-            return False
-        else:
-            return True
+        for i in range(row, row + ship_length):
+            if board[i][col] != '.':
+                return False
+    return True
 
+# def ship_ovlap(board, row, col, axis, ship):
+#     """
+#     Checks if any ships placed are
+#     going to overlap existing ships
 
-def ship_ovlap(board, row, col, axis, ship):
-    """
-    Checks if any ships placed are
-    going to overlap existing ships
-
-    """
-    if axis == 'X':
-        for i in range(col, col + ship):
-            if board[row][i] == '@':
-                return True
-    else:
-        for i in range(row, row + ship):
-            if board[i][col] == '@':
-                return True
-    return False
+#     """
+#     if axis == 'X':
+#         for i in range(col, col + ship):
+#             if board[row][i] == '@':
+#                 return True
+#     else:
+#         for i in range(row, row + ship):
+#             if board[i][col] == '@':
+#                 return True
+#     return False
 
 
 def count_hits(board):
@@ -199,9 +189,9 @@ def start_game():
     type_slow('Player Board:\n')
     print('')
     display_board(player_board)
-    #add_ships(cpu_board)
-    #add_ships(player_board)
+    add_ships(cpu_board, the_ships)
+    add_ships(player_board, the_ships)
 
 
-#intro()
+# intro()
 start_game()

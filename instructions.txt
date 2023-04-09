@@ -16,7 +16,8 @@ Your fleet:
 
 Grid legend:
 @ = Healthy ship
-O = Missed ship
+O = Missed target
 X = Hit ship
+. = Empty space
 
 Good Luck!
