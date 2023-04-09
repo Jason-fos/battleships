@@ -8,8 +8,8 @@ import sys
 import time
 
 # CPU and player boards
-player_board = [[''] * 9 for x in range(9)]
-cpu_board = [[''] * 9 for x in range(9)]
+player_board = [['.' for _ in range(9)] for _ in range(9)]
+cpu_board = [['.' for _ in range(9)] for _ in range(9)] 
 
 # Dictionary to form key value pairs for board co-ordinates
 coordinates = {
@@ -17,7 +17,7 @@ coordinates = {
 }
 
 # Ship sizes
-ship_sizes = [2, 2, 3, 3, 4, 5]
+ships = [2, 2, 3, 4, 5]
 
 
 def type_fast(string):
@@ -27,7 +27,7 @@ def type_fast(string):
     for ltr in string:
         sys.stdout.write(ltr)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.03)
 
 
 def type_slow(string):
@@ -98,12 +98,11 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('   a b c d e f g h i')
-    print('  *******************')
-    row_no = 1
+    print('  a b c d e f g h i')
+    row_num = 1
     for row in board:
-        print(' %d| %s|' % (row_no, '| '.join(row)))
-        row_no += 1
+        print(row_num, ' '.join(row))
+        row_num += 1
 
 
 def add_ships(board):
@@ -116,7 +115,7 @@ def add_ships(board):
         while True:
             if board == cpu_board:
                 axis, row, col = random.choice(['X', 'Y']), \
-                    random.randint(0, 9), random.randint(0, 9)
+                    random.randint(0, 8), random.randint(0, 8)
                 if check_ship(ship, row, col, axis):
                     if not ship_ovlap(board, row, col, axis, ship):
                         if axis == 'X':
@@ -128,7 +127,7 @@ def add_ships(board):
                         break
             if board == player_board:
                 axis, row, col = random.choice(['X', 'Y']), \
-                    random.randint(0, 9), random.randint(0, 9)
+                    random.randint(0, 8), random.randint(0, 8)
                 if check_ship(ship, row, col, axis):
                     if not ship_ovlap(board, row, col, axis, ship):
                         if axis == 'X':
@@ -173,6 +172,7 @@ def ship_ovlap(board, row, col, axis, ship):
                 return True
     return False
 
+
 def count_hits(board):
     """
     The count_hits function counts successful
@@ -192,11 +192,16 @@ def start_game():
     This is the main game loop
 
     """
+    type_slow('CPU Board:\n')
+    print('')
     display_board(cpu_board)
     print('')
+    type_slow('Player Board:\n')
+    print('')
     display_board(player_board)
-    add_ships(cpu_board)
-    add_ships(player_board)
+    #add_ships(cpu_board)
+    #add_ships(player_board)
 
 
-intro()
+#intro()
+start_game()
