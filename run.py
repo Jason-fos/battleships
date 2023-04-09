@@ -11,11 +11,6 @@ import time
 player_board = [['.' for _ in range(9)] for _ in range(9)]
 cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 
-# Dictionary to form key value pairs for board coordinates
-# coordinates = {
-#     'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8, 'i': 9
-# }
-
 # Ship sizes
 the_ships = [2, 2, 3, 4, 5]
 
