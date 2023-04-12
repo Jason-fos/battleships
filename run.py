@@ -12,7 +12,7 @@ player_board = [['.' for _ in range(9)] for _ in range(9)]
 cpu_board = [['.' for _ in range(9)] for _ in range(9)]
 hidden_board = [['.' for _ in range(9)] for _ in range(9)]
 
-# Ship sizes
+# Ships
 the_ships = [2, 2, 3, 4, 5]
 
 
@@ -42,7 +42,7 @@ def intro():
     This is the introduction to the game
     which will display the battleship logo
     followed by a welcome message asking if
-    the user needs to see instructions
+    the user knows how to play
 
     """
     type_slow('Welcome to...\n')
@@ -210,6 +210,22 @@ def cpu_guess(board):
     return board[row][col]
 
 
+def play_again():
+    """
+    play_again function will reset the boards
+    and call the start_game function so the user 
+    can play again
+
+    """
+    global player_board
+    global cpu_board
+    global hidden_board
+    player_board = [['.' for _ in range(9)] for _ in range(9)]
+    cpu_board = [['.' for _ in range(9)] for _ in range(9)]
+    hidden_board = [['.' for _ in range(9)] for _ in range(9)]
+    start_game()
+
+
 def start_game():
     """
     This is the main game loop it
@@ -238,18 +254,17 @@ def start_game():
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
-        if count_hits(cpu_board) == 16:
+        if count_hits(cpu_board) == 1:
             type_slow('You win! Well done captain!\n')
             print('')
             type_slow('Want to play again?\n')
             answer = input('Y or N \n').upper()
             while True:
                 if answer == 'Y':
-                    start_game()
-                    return False
+                    play_again()
                 elif answer == 'N':
                     type_slow('See you next time captain!\n')
-                    return False
+                    sys.exit()
                 else:
                     type_slow('Please enter Y or N')
                     input('').upper()
@@ -271,11 +286,9 @@ def start_game():
                 answer = input('Y or N \n').upper()
                 while True:
                     if answer == 'Y':
-                        start_game()
-                        return False
+                        play_again()
                     elif answer == 'N':
                         type_slow('See you next time captain!\n')
-                        return False
                     else:
                         type_slow('Please enter Y or N')
                         input('').upper()

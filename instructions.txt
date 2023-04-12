@@ -6,7 +6,7 @@ You will each have 5 ships of different sizes
 You will not be able to see each others ships on your boards
 You will take in turns choosing coordinates
 Ships will be placed horizontal or vertical, never diagonal
-You will have unlimited ammunition!
+You have unlimited ammunition!
 When all enemy ships are sunk you win!
 
 Your fleet:
