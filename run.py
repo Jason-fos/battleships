@@ -60,7 +60,7 @@ def intro():
     )
 
     print('')
-    time.sleep(1)
+    time.sleep(0.8)
     type_slow('Do you know how to play?\n')
     print('')
     answer = input('Enter Y or N\n').upper()
@@ -94,11 +94,13 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
+    print('')
     print('  0 1 2 3 4 5 6 7 8 9')
     row_num = 0
     for row in board:
         print(row_num, ' '.join(row))
         row_num += 1
+    print('')
 
 
 def add_ships(board, ships):
@@ -145,7 +147,7 @@ def location_check(board, row, col, position, ship_length):
 def count_hits(board):
     """
     The count_hits function counts successful
-    hits from the player and cpu.
+    hits from the player and cpu boards after each turn
 
     """
     count = 0
@@ -168,20 +170,27 @@ def player_guess(board, hidden):
             row = int(input('Enter target row 0-9 \n'))
             break
         except ValueError:
+            print('')
             print('ERROR: Please enter a valid number between 0-9 \n')
     while True:
         try:
+            print('')
             col = int(input('Enter target column 0-9 \n'))
             break
         except ValueError:
+            print('')
             print('ERROR: Please enter a number between 0-9 \n')
 
     if hidden[row][col] == '.':
-        print('You missed!\n')
+        print('')
+        type_slow('You missed!\n')
+        print('')
         board[row][col] = 'O'
         hidden[row][col] = 'O'
     elif hidden[row][col] == '@':
-        print('You hit an enemy ship!\n')
+        print('')
+        type_slow('You hit an enemy ship!\n')
+        print('')
         board[row][col] = 'X'
         hidden[row][col] = 'X'
     else:
@@ -201,10 +210,12 @@ def cpu_guess(board):
     row = random.randint(0, len(board) - 1)
     col = random.randint(0, len(board) - 1)
     if board[row][col] == '.':
-        type_slow('CPU missed target!\n')
+        type_slow('CPU missed the target!\n')
+        print('')
         board[row][col] = 'O'
     elif board[row][col] == '@':
         type_slow('CPU hit one of your ships!\n')
+        print('')
         board[row][col] = 'X'
     return board[row][col]
 
@@ -212,7 +223,7 @@ def cpu_guess(board):
 def play_again():
     """
     play_again function will reset the boards
-    and call the start_game function so the user 
+    and call the start_game function so the user
     can play again
 
     """
@@ -239,17 +250,12 @@ def start_game():
     add_ships(player_board, the_ships)
 
     # Print the boards to the screen
-    print('')
     type_slow('Player Board:\n')
-    print('')
     display_board(player_board)
-    print('')
     type_slow('CPU Board:\n')
-    print('')
     display_board(cpu_board)
-    display_board(hidden_board)
 
-    # Player and computer turns
+    # Player turns
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
@@ -267,17 +273,14 @@ def start_game():
                 else:
                     type_slow('Please enter Y or N')
                     input('').upper()
+        # Computer turns
         else:
             time.sleep(0.3)
             cpu_guess(player_board)
             time.sleep(0.3)
-            print('')
             type_slow('Player Board:\n')
-            print('')
             display_board(player_board)
-            print('')
             type_slow('CPU Board:\n')
-            print('')
             display_board(cpu_board)
             if count_hits(player_board) == 19:
                 print('You lose! They sank all you"re ships! \n')
@@ -295,5 +298,4 @@ def start_game():
                         input('').upper()
 
 
-# intro()
-start_game()
+intro()
