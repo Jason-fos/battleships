@@ -142,18 +142,6 @@ def location_check(board, row, col, position, ship_length):
     return True
 
 
-# def create_hidden_pattern(board):
-#     """
-#     Function to create hidden board
-#     with ships placed to match cpu_board
-
-#     """
-#     hidden_board = [['.' for _ in range(9)] for _ in range(9)]
-
-#     if board == hidden_board:
-#         hidden_board = cpu_board
-
-
 def count_hits(board):
     """
     The count_hits function counts successful
@@ -175,8 +163,17 @@ def player_guess(board, hidden):
     the computers ships on the grid
 
     """
-    row = int(input('Enter target row 0-8\n'))
-    col = int(input('Enter target column 0-8\n'))
+    while True:
+        try:
+            row = int(input('Enter target row 0-8 \n'))
+        except ValueError:
+            print('That"s not a number between 0-8 \n')
+    while True:
+        try:
+            col = int(input('Enter target column 0-8 \n'))
+        except ValueError:
+            print('That"s not a number between 0-8 \n')
+
     if hidden[row][col] == '.':
         print('You missed!\n')
         board[row][col] = 'O'
@@ -254,7 +251,7 @@ def start_game():
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
-        if count_hits(cpu_board) == 1:
+        if count_hits(cpu_board) == 16:
             type_slow('You win! Well done captain!\n')
             print('')
             type_slow('Want to play again?\n')
@@ -289,6 +286,7 @@ def start_game():
                         play_again()
                     elif answer == 'N':
                         type_slow('See you next time captain!\n')
+                        sys.exit()
                     else:
                         type_slow('Please enter Y or N')
                         input('').upper()
