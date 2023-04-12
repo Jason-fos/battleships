@@ -1,9 +1,9 @@
 Game Instructions:
 Battleships is a strategy based guessing game
 You will play against the computer
-The game is played on a 9 x 9 grid
-You will each have 5 ships of different sizes
-You will not be able to see each others ships on your boards
+The game is played on a 10 x 10 grid
+You each have 6 ships of different sizes
+You will not be able to see each others ships
 You will take in turns choosing coordinates
 Ships will be placed horizontal or vertical, never diagonal
 You have unlimited ammunition!
@@ -11,7 +11,7 @@ When all enemy ships are sunk you win!
 
 Your fleet:
 2 destroyers : take 2 grid places each
-1 sub : take 3 grid spaces each
+2 subs : take 3 grid spaces each
 1 carrier : takes 4 grid spaces
 1 battleship : takes 5 grid spaces
 
@@ -19,6 +19,6 @@ Grid legend:
 @ = Healthy ship
 O = Missed target
 X = Hit ship
-. = Empty space
+. = Untargeted location
 
-Good Luck!
+Good Luck captain!

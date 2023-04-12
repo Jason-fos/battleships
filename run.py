@@ -8,12 +8,12 @@ import sys
 import time
 
 # CPU and player boards
-player_board = [['.' for _ in range(9)] for _ in range(9)]
-cpu_board = [['.' for _ in range(9)] for _ in range(9)]
-hidden_board = [['.' for _ in range(9)] for _ in range(9)]
+player_board = [['.' for _ in range(10)] for _ in range(10)]
+cpu_board = [['.' for _ in range(10)] for _ in range(10)]
+hidden_board = [['.' for _ in range(10)] for _ in range(10)]
 
 # Ships
-the_ships = [2, 2, 3, 4, 5]
+the_ships = [2, 2, 3, 3, 4, 5]
 
 
 def type_fast(string):
@@ -94,7 +94,7 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('  0 1 2 3 4 5 6 7 8')
+    print('  0 1 2 3 4 5 6 7 8 9')
     row_num = 0
     for row in board:
         print(row_num, ' '.join(row))
@@ -165,14 +165,16 @@ def player_guess(board, hidden):
     """
     while True:
         try:
-            row = int(input('Enter target row 0-8 \n'))
+            row = int(input('Enter target row 0-9 \n'))
+            break
         except ValueError:
-            print('That"s not a number between 0-8 \n')
+            print('ERROR: Please enter a valid number between 0-9 \n')
     while True:
         try:
-            col = int(input('Enter target column 0-8 \n'))
+            col = int(input('Enter target column 0-9 \n'))
+            break
         except ValueError:
-            print('That"s not a number between 0-8 \n')
+            print('ERROR: Please enter a number between 0-9 \n')
 
     if hidden[row][col] == '.':
         print('You missed!\n')
@@ -184,8 +186,8 @@ def player_guess(board, hidden):
         hidden[row][col] = 'X'
     else:
         print('You already tried those co-ords!\n')
-        row = int(input('Try again, row number 0-8\n'))
-        col = int(input('Try again, column number 0-8\n'))
+        row = int(input('Try again, row number 0-9\n'))
+        col = int(input('Try again, column number 0-9\n'))
     return board[row][col]
 
 
@@ -217,9 +219,9 @@ def play_again():
     global player_board
     global cpu_board
     global hidden_board
-    player_board = [['.' for _ in range(9)] for _ in range(9)]
-    cpu_board = [['.' for _ in range(9)] for _ in range(9)]
-    hidden_board = [['.' for _ in range(9)] for _ in range(9)]
+    player_board = [['.' for _ in range(10)] for _ in range(10)]
+    cpu_board = [['.' for _ in range(10)] for _ in range(10)]
+    hidden_board = [['.' for _ in range(10)] for _ in range(10)]
     start_game()
 
 
@@ -247,11 +249,11 @@ def start_game():
     display_board(cpu_board)
     display_board(hidden_board)
 
-    # Player and computers turns loop
+    # Player and computer turns
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
-        if count_hits(cpu_board) == 16:
+        if count_hits(cpu_board) == 19:
             type_slow('You win! Well done captain!\n')
             print('')
             type_slow('Want to play again?\n')
@@ -269,6 +271,7 @@ def start_game():
             time.sleep(0.3)
             cpu_guess(player_board)
             time.sleep(0.3)
+            print('')
             type_slow('Player Board:\n')
             print('')
             display_board(player_board)
@@ -276,7 +279,7 @@ def start_game():
             type_slow('CPU Board:\n')
             print('')
             display_board(cpu_board)
-            if count_hits(player_board) == 16:
+            if count_hits(player_board) == 19:
                 print('You lose! They sank all you"re ships! \n')
                 print('')
                 type_slow('Want to play again?\n')
