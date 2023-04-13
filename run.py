@@ -86,7 +86,17 @@ def show_instructions():
     with open('instructions.txt') as file:
         contents = file.read()
         print(contents)
-        start_game()
+    answer = input('Enter Y to play or N to leave\n')
+    while True:
+        if answer == 'Y':
+            start_game()
+        elif answer == 'N':
+            type_slow('Ah maybe next time, Goodbye!\n')
+            sys.exit()
+            break
+        else:
+            type_slow('Please enter Y or N\n')
+            answer = input('').upper()
 
 
 def display_board(board):

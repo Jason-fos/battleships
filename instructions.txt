@@ -8,13 +8,11 @@ You will take in turns choosing coordinates
 Ships will be placed horizontal or vertical, never diagonal
 You have unlimited ammunition!
 When all enemy ships are sunk you win!
-
 Your fleet:
 2 destroyers : take 2 grid places each
 2 subs : take 3 grid spaces each
 1 carrier : takes 4 grid spaces
 1 battleship : takes 5 grid spaces
-
 Grid legend:
 @ = Healthy ship
 O = Missed target
