@@ -106,13 +106,11 @@ def display_board(board):
     Prints the boards to the terminal
 
     """
-    print('')
     print('  0 1 2 3 4 5 6 7 8 9')
     row_num = 0
     for row in board:
         print(row_num, ' '.join(row))
         row_num += 1
-    print('')
 
 
 def add_ships(board, ships):
