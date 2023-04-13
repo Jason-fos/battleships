@@ -80,7 +80,9 @@ def show_instructions():
     """
     Displays the instructions to the user
     by reading instuctions.txt file and
-    printing the lines to the terminal
+    printing the contents to the terminal
+    it waits for user to input valid data
+    then calls start_game when ready
 
     """
     with open('instructions.txt') as file:
