@@ -201,9 +201,9 @@ def player_guess(board, hidden):
         board[row][col] = 'X'
         hidden[row][col] = 'X'
     else:
-        print('You already tried those co-ords!\n')
-        row = int(input('Try again, row number 0-9\n'))
-        col = int(input('Try again, column number 0-9\n'))
+        print('You already tried those coordinates! Try again\n')
+        row = int(input('Target row number 0-9\n'))
+        col = int(input('Target column number 0-9\n'))
     return board[row][col]
 
 
@@ -211,7 +211,7 @@ def cpu_guess(board):
     """
     Function to allow the computer
     to choose random x an y coordinates
-    to hit players ships
+    to target the players ships
 
     """
     row = random.randint(0, len(board) - 1)
