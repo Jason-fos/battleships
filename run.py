@@ -95,7 +95,6 @@ def show_instructions():
         elif answer == 'N':
             type_slow('Ah maybe next time, Goodbye!\n')
             sys.exit()
-            break
         else:
             type_slow('Please enter Y or N\n')
             answer = input('').upper()
