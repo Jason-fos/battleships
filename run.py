@@ -88,7 +88,7 @@ def show_instructions():
     with open('instructions.txt') as file:
         contents = file.read()
         print(contents)
-    answer = input('Enter Y to play or N to leave\n')
+    answer = input('Enter Y to play or N to leave\n').upper()
     while True:
         if answer == 'Y':
             start_game()
@@ -96,8 +96,7 @@ def show_instructions():
             type_slow('Ah maybe next time, Goodbye!\n')
             sys.exit()
         else:
-            type_slow('Please enter Y or N\n')
-            answer = input('').upper()
+            answer = input('Please enter Y or N\n').upper()
 
 
 def display_board(board):
@@ -183,7 +182,6 @@ def player_guess(board, hidden):
             print('ERROR: Please enter a valid number between 0-9 \n')
     while True:
         try:
-            print('')
             col = int(input('Enter target column 0-9 \n'))
             break
         except ValueError:
