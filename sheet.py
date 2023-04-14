@@ -46,7 +46,7 @@ def validate_info(user, password):
     exists and that the password and username info
     provided by the user are valid. It will provide
     the user with an error if invalid data is entered
-    
+
     """
     try:
         if len(user) < 6 or len(password) < 6:
@@ -63,16 +63,16 @@ def validate_info(user, password):
                 raise ValueError(
                     'Username exists already\n'
                 )
-    except ValueError as ve:
-        print(f'Username not valid: {ve}')
+    except ValueError as v_e:
+        print(f'Username not valid: {v_e}')
         return False
     try:
         if not (isinstance(user, str) or isinstance(password, str)):
             raise TypeError(
                 'Please enter information in string form\n'
             )
-    except TypeError as te:
-        print(f'Input not valid: {te}')
+    except TypeError as t_e:
+        print(f'Input not valid: {t_e}')
         return False
     else:
         print('You"re all signed up\n')
