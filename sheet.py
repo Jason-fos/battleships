@@ -25,3 +25,11 @@ def login_info():
     user_login = USERS.get_all_records()
     return user_login
 
+
+def update_login_info():
+    """
+    Function to update the users worksheet
+    with new username and password information
+    provided by the user
+
+    """
