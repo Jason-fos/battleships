@@ -26,10 +26,21 @@ def login_info():
     return user_login
 
 
-def update_login_info():
+def update_login_info(data):
     """
     Function to update the users worksheet
     with new username and password information
     provided by the user
 
+    """
+    USERS.append_row(data)
+
+
+def validate_user_info(user, password):
+    """
+    Function that checks if the username already
+    exists and that the password and username info
+    provided by the user are valid. It will provide 
+    the user with an error if invalid data is entered
+    
     """
