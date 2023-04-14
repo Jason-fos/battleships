@@ -1,3 +1,7 @@
+"""
+Sheet.py contains validation
+
+"""
 # Imports
 import gspread
 from google.oauth2.service_account import Credentials
@@ -40,7 +44,10 @@ def validate_user_info(user, password):
     """
     Function that checks if the username already
     exists and that the password and username info
-    provided by the user are valid. It will provide 
+    provided by the user are valid. It will provide
     the user with an error if invalid data is entered
     
     """
+
+
+login_info()
