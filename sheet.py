@@ -40,7 +40,7 @@ def update_login_info(data):
     USERS.append_row(data)
 
 
-def validate_user_info(user, password):
+def validate_info(user, password):
     """
     Function that checks if the username already
     exists and that the password and username info
@@ -48,6 +48,32 @@ def validate_user_info(user, password):
     the user with an error if invalid data is entered
     
     """
-
-
-login_info()
+    try:
+        if len(user) < 6 or len(password) < 6:
+            raise ValueError(
+                'Username and password need to be min of 5 characters\n'
+                )
+    except ValueError:
+        print('Input not valid')
+        return False
+    try:
+        existing = login_info()
+        for ex in existing:
+            if ex['USERNAME'] == user:
+                raise ValueError(
+                    'Username exists already\n'
+                )
+    except ValueError as ve:
+        print(f'Username not valid: {ve}')
+        return False
+    try:
+        if not (isinstance(user, str) or isinstance(password, str)):
+            raise TypeError(
+                'Please enter information in string form\n'
+            )
+    except TypeError as te:
+        print(f'Input not valid: {te}')
+        return False
+    else:
+        print('You"re all signed up\n')
+        return True

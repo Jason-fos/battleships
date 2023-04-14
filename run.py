@@ -175,18 +175,24 @@ def player_guess(board, hidden):
     """
     while True:
         try:
-            row = int(input('Enter target row 0-9 \n'))
+            row = int(input('\nEnter target row 0-9 \n'))
+            if row > 9 or not int(row):
+                raise ValueError(
+                    'Please enter a valid number between 0-9\n'
+                )
             break
-        except ValueError:
-            print('')
-            print('ERROR: Please enter a valid number between 0-9 \n')
+        except ValueError as e_e:
+            type_slow(f'Invalid input: {e_e}')
     while True:
         try:
             col = int(input('Enter target column 0-9 \n'))
+            if row > 9 or not int(col):
+                raise ValueError(
+                    'Please enter a valid number between 0-9\n'
+                )
             break
-        except ValueError:
-            print('')
-            print('ERROR: Please enter a number between 0-9 \n')
+        except ValueError as e_e:
+            type_slow(f'Invalid input: {e_e}')
 
     if hidden[row][col] == '.':
         print('')
