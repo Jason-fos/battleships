@@ -14,6 +14,7 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('battleships')
 USERS = SHEET.worksheet('users')
 
+
 def login_info():
     """
     Function to get data from the worksheet
@@ -23,3 +24,4 @@ def login_info():
     """
     user_login = USERS.get_all_records()
     return user_login
+
