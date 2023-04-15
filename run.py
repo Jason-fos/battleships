@@ -158,7 +158,7 @@ def check_user():
                 type_slow('Log in successful\n')
                 os.system('clear')
                 time.sleep(0.5)
-                # intro()
+                logo()
                 current_user['name'] = data['username']
                 type_slow(f'Welcome to the battle {current_user["name"]}!')
             else:
