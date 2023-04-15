@@ -46,15 +46,11 @@ def type_slow(string):
         time.sleep(0.1)
 
 
-def intro():
+def logo():
     """
-    This is the introduction to the game
-    which will display the battleship logo
-    followed by a welcome message asking if
-    the user knows how to play
+    The battleships logo for the game
 
     """
-    type_slow('Welcome to...\n')
     type_fast(
         """
     ____        _   _   _           _     
@@ -68,6 +64,17 @@ def intro():
     """
     )
 
+
+def intro():
+    """
+    This is the introduction to the game
+    which will display the battleship logo
+    followed by a welcome message asking if
+    the user knows how to play
+
+    """
+    type_slow('Welcome to...\n')
+    logo()
     print('')
     time.sleep(0.8)
     prev_user()
