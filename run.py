@@ -272,7 +272,7 @@ def player_guess(board, hidden):
     while True:
         try:
             row = int(input('\nEnter target row 0-9 \n'))
-            if row > 9 or not int(row):
+            if row > 9 or row < 0:
                 raise ValueError(
                     'Please enter a valid number between 0-9\n'
                 )
@@ -282,7 +282,7 @@ def player_guess(board, hidden):
     while True:
         try:
             col = int(input('Enter target column 0-9 \n'))
-            if row > 9 or not int(col):
+            if row > 9 or row < 0:
                 raise ValueError(
                     'Please enter a valid number between 0-9\n'
                 )
