@@ -7,6 +7,11 @@ import random
 import sys
 import time
 
+# Internal imports
+from sheet import login_info
+from sheet import update_login_info
+from sheet import validate_info
+
 # CPU and player boards
 player_board = [['.' for _ in range(10)] for _ in range(10)]
 cpu_board = [['.' for _ in range(10)] for _ in range(10)]
@@ -14,6 +19,9 @@ hidden_board = [['.' for _ in range(10)] for _ in range(10)]
 
 # Ships
 the_ships = [2, 2, 3, 3, 4, 5]
+
+# User
+current_user = {'name': 'Remo'}
 
 
 def type_fast(string):
@@ -78,7 +86,7 @@ def intro():
 
 def prev_user():
     """
-    Function to ask if the user is an 
+    Function to ask if the user is an
     existing user and if not it will
     promt them to sign up to play
 
@@ -98,7 +106,7 @@ def new_user_info():
     """
     Function to get the users log in information
     then validate the input from the user and finally
-    append the information to the google sheet 
+    append the information to the google sheet
 
     """
     time.sleep(0.5)
@@ -121,7 +129,7 @@ def new_user_info():
 
 def check_user():
     """
-    Function to check if the user already 
+    Function to check if the user already
     exists by comparing the input provided
     by the user to the values in the google
     sheet
@@ -387,7 +395,7 @@ def start_game():
 
 def main():
     """
-    Function to call the intro function 
+    Function to call the intro function
     and begin the game
 
     """
