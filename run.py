@@ -6,6 +6,7 @@ Battleships terminal game written in python
 import random
 import sys
 import time
+import os
 
 # Internal imports
 from sheet import login_info
@@ -148,6 +149,7 @@ def check_user():
         if username == data['username']:
             if password == data['password']:
                 type_slow('Log in successful\n')
+                os.system('clear')
                 time.sleep(0.5)
                 # intro()
                 current_user['name'] = data['username']

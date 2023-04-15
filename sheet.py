@@ -59,7 +59,7 @@ def validate_info(user, password):
     try:
         existing = login_info()
         for ex in existing:
-            if ex['USERNAME'] == user:
+            if ex['username'] == user:
                 raise ValueError(
                     'Username exists already\n'
                 )
