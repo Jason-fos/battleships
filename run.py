@@ -85,13 +85,38 @@ def prev_user():
     """
     existing_user = input('Are you a returning user? Enter Y or N\n').upper()
     if existing_user == 'Y':
-        check_prev_user()
+        check_user()
     elif existing_user == 'N':
         new_user_info()
     else:
         type_slow('Please enter Y or N\n')
         time.sleep(0.5)
         prev_user()
+
+
+def new_user_info():
+    """
+    Function to get the users log in information
+    then validate the input from the user and finally
+    append the information to the google sheet 
+
+    """
+    time.sleep(0.5)
+    type_slow('Sign up here to play!\n')
+    type_slow('Sign up instruction:\n')
+    type_slow('The username and password are case sensitive\n')
+    type_slow('They should both be a minimum of 5 characters long\n')
+    time.sleep(0.5)
+    username_input = input('Please enter desired username\n')
+    password_input = input('Please enter a secure password\n')
+    validate = validate_info(username_input, password_input)
+    if validate:
+        login = [username_input, password_input]
+        update_login_info(login)
+        time.sleep(1)
+        check_user()
+    else:
+        new_user_info()
 
 
 def show_instructions():
