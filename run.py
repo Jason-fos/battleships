@@ -157,8 +157,8 @@ def check_user():
         if username == data['username']:
             if password == data['password']:
                 type_slow('Log in successful\n')
+                time.sleep(0.8)
                 os.system('clear')
-                time.sleep(0.5)
                 logo()
                 current_user['name'] = data['username']
                 type_slow(f'Welcome to the battle {current_user["name"]}!')
