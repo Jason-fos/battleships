@@ -119,6 +119,37 @@ def new_user_info():
         new_user_info()
 
 
+def check_user():
+    """
+    Function to check if the user already 
+    exists by comparing the input provided
+    by the user to the values in the google
+    sheet
+
+    """
+    type_slow('Login in to play Battleships\n')
+    username = input('Username:\n')
+    password = input('Password:\n')
+    user_data = login_info()
+    check_data = 0
+    for data in user_data:
+        if username == data['username']:
+            if password == data['password']:
+                type_slow('Log in successful\n')
+                time.sleep(0.5)
+                # intro()
+                current_user['name'] = data['username']
+                type_slow(f'Welcome to the battle {current_user["name"]}!')
+            else:
+                type_slow('Password incorrect\n')
+                prev_user()
+        else:
+            check_data += 1
+            if check_data == len(user_data):
+                type_slow('User details do not exist. Try again')
+                prev_user()
+
+
 def show_instructions():
     """
     Displays the instructions to the user
