@@ -76,6 +76,24 @@ def intro():
             answer = input('').upper()
 
 
+def prev_user():
+    """
+    Function to ask if the user is an 
+    existing user and if not it will
+    promt them to sign up to play
+
+    """
+    existing_user = input('Are you a returning user? Enter Y or N\n').upper()
+    if existing_user == 'Y':
+        check_prev_user()
+    elif existing_user == 'N':
+        new_user_info()
+    else:
+        type_slow('Please enter Y or N\n')
+        time.sleep(0.5)
+        prev_user()
+
+
 def show_instructions():
     """
     Displays the instructions to the user
