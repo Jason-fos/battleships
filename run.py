@@ -69,6 +69,7 @@ def intro():
 
     print('')
     time.sleep(0.8)
+    prev_user()
     type_slow('Do you know how to play?\n')
     print('')
     answer = input('Enter Y or N\n').upper()
