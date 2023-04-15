@@ -147,7 +147,7 @@ def check_user():
     sheet
 
     """
-    type_slow('Login in to play Battleships\n')
+    type_slow('Log in to play Battleships\n')
     username = input('Username:\n')
     password = input('Password:\n')
     user_data = login_info()
