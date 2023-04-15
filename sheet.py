@@ -69,7 +69,7 @@ def validate_info(user, password):
     try:
         if not (isinstance(user, str) or isinstance(password, str)):
             raise TypeError(
-                'Please enter information in string form\n'
+                'Please enter letters only\n'
             )
     except TypeError as t_e:
         print(f'Input not valid: {t_e}')

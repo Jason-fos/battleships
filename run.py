@@ -311,4 +311,13 @@ def start_game():
                         input('').upper()
 
 
-intro()
+def main():
+    """
+    Function to call the intro function 
+    and begin the game
+
+    """
+    intro()
+
+
+main()
