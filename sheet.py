@@ -51,7 +51,7 @@ def validate_info(user, password):
     try:
         if len(user) < 6 or len(password) < 6:
             raise ValueError(
-                'Username and password need to be min of 5 characters\n'
+                'Username and password need to be min of 6 characters\n'
                 )
     except ValueError:
         print('Input not valid')
