@@ -371,7 +371,7 @@ The website was tested on the following browsers:
 
 
 ## Deployment
-### Deploying the website in Heroko:
+### Deploying in Heroku:
 - The website was deployed to Heroko using following steps:
 - Make an account on Heroko and login
 - Create new app by clicking the new app option at the top right of the screen.
@@ -381,7 +381,6 @@ The website was tested on the following browsers:
   - Values are as follows:
     - KEY = CREDS /  VALUE = 'The contents of the creds.json file'
     - KEY = PORT /  VALUE = 8000
-
 - Then add your build packs
   - Add python buildpack first
   - Add Nodejs buildpack after that
@@ -401,23 +400,27 @@ The website was tested on the following browsers:
   - Once clicked the app will open
 
 
-### Forking the GitHub Repository
-1. Go to the GitHub repository
-2. Click on Fork button in top right corner
-3. You will then have a copy of the repository in your own GitHub account.
-4. [GitHub Repository](https://github.com/Sinha5714/hangman-pp3)
+### You can fork the repository by following these steps:
+1. Go to the GitHub repository.
+2. Click on Fork button in upper right hand corner.
 
-### Cloning the repository in GitHub
-1. Visit the GitHub page of the website's repository
-2. Click the “Clone” button on top of the page
-3. Click on “HTTPS”
-4. Click on the copy button next to the link to copy it
-5. Open your IDE
-6. Type ```git clone <copied URL>``` into the terminal
+### You can clone the repository by following these steps:
+1. Go to the GitHub repository. 
+2. Find the Code button above the list of files and click it. 
+3. Select which you prefer, clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL.
+4. Open Git Bash.
+5. Change the current working directory to the one where you want the cloned directory.
+6. Type git clone and paste the copied URL.
+7. Press Enter to create your local clone.
 
 
 ## Credits
-
+- Inspiration was taken from [Stack overflow](https://stackoverflow.com/) and [pythondex](https://pythondex.com/)
+- I found answers to lots of questions through the following sources:
+  - [stack overflow](https://stackoverflow.com/)
+  - The slack community
+  - Google search
+  - [code review.stack exchange](https://codereview.stackexchange.com/)
 
 ## Acknowledgements
 I would like to take the opportunity to thank:
