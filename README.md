@@ -130,6 +130,10 @@
 - If the user enters N the game ends and user is 
   displayed a goodbye message.
 
+## Technical Design
+
+### Flowchart
+
 
 ## Technologies Used
 
