@@ -2,7 +2,8 @@
 Battleships terminal game written in python
 
 """
-# Inspiration for game layout and design taken from stackoverflow, pythondex and copyassignment
+# Inspiration for game layout and design taken from stackoverflow
+#  pythondex and copyassignment
 
 # Import modules
 import random
