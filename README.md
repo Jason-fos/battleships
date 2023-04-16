@@ -1,31 +1,263 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships
+(Developer: Jason Foster)
 
-Welcome Jason-fos,
+![Mockup image]()
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Live webpage]()
 
-## Reminders
+## Table of Content
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+1. [Project Goals](#project-goals)
+    1. [User Goals](#user-goals)
+    2. [Site Owner Goals](#site-owner-goals)
+2. [User Experience](#user-experience)
+    1. [Target Audience](#target-audience)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
+    3. [User Stories](#user-stories)
+3. [Design](#design)
+    1. [Design Choices](#design-choices)
+    2. [Colour](#colours)
+    3. [Fonts](#fonts)
+    4. [Structure](#structure)
+    5. [Wireframes](#wireframes)
+4. [Technologies Used](#technologies-used)
+    1. [Languages](#languages)
+    2. [Frameworks & Tools](#frameworks-&-tools)
+5. [Features](#features)
+6. [Testing](#validation)
+    1. [HTML Validation](#HTML-validation)
+    2. [CSS Validation](#CSS-validation)
+    3. [Accessibility](#accessibility)
+    4. [Performance](#performance)
+    5. [Device testing](#performing-tests-on-various-devices)
+    6. [Browser compatibility](#browser-compatability)
+    7. [Testing user stories](#testing-user-stories)
+8. [Bugs](#Bugs)
+9. [Deployment](#deployment)
+10. [Credits](#credits)
+11. [Acknowledgements](#acknowledgements)
 
-## Creating the Heroku app
+## Project Goals 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### User Goals
+- 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Site Owner Goals
+- 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## User Experience
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Target Audience
+- 
+### User Requirements and Expectations
 
-Connect your GitHub repository and deploy as normal.
+-
 
-## Constraints
+### User Stories
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### Site User 
+1. 
 
------
-Happy coding!
+#### Site Owner 
+
+## Design
+
+### Design Choices
+
+### Colour
+ 
+<br>
+
+
+### Structure
+
+
+## Technologies Used
+
+### Languages
+-
+
+### Frameworks & Tools
+- Git
+- GitHub
+- Gitpod
+- Python tutor
+
+## Features
+
+
+### Logo and Navigation Bar
+- 
+![]()
+
+### Rules and Scoring section
+- 
+
+![rules and scoring section]()
+
+### Rules and scoring toggle button
+-
+
+![rules and scoring toggle button]()
+
+### Create Username
+- 
+![create username]()
+
+### Right Or Wrong Answer Message To User
+- 
+
+![right or wrong answer message]()
+![right or wrong answer message]()
+
+### Current Score
+- 
+
+![current score]()
+
+### Quiz Question Progress
+-
+
+![quiz question progress]()
+
+### Game Over Or Win Display
+- 
+
+![game over or win display]()
+![game over or win display]()
+
+
+## Validation
+
+### PEP8 Validation
+
+
+### Performing tests on various devices 
+
+### Browser compatability
+The website was tested on the following browsers:
+-
+### Testing user stories
+1.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation link | Click the Go To Quiz link from the navigation menu | Take user to the quiz page | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+<img src=>
+</details>
+
+2. 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Rules and Scoring section | Clearly displayed on the home page | Provide information on the rules and scoring | Works as expected |
+| Toggle rules button in footer | Click rules button in footer | Toggle the rules from hidden to visible | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+
+</details>
+
+3.  
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| right/wrong message| click submit answer button in the quiz | Display right or wrong answer message to user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+4. 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Current Score | Top left corner of the quiz area provides a score | Display the score to the user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+5.
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Create username | Click go to quiz in nav menu, enter username where prompted and click submit | Create a username | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+6. 
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Quiz progress | Top right corner of quiz area displays quiz progress | To display the quiz progress to the user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+7.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Navigation bar | Click links in nav menu | Navigate around the site | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src="docs/user-story-testing/user-story-7.png">
+</details>
+
+8. 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Rules and scoring section | Clearly displayed on home page | Clearly display information to the user | Works as expected |
+| Quiz area | go to quiz page and start quiz | Clearly display information to the user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+9. 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| Game over/Win message | Lose or complete the quiz | Display game over or win message to user | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src>
+</details>
+
+10. 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| 404 page | Click any link in navigation bar to return to site | Prevent user from using browser back arrows | Works as expected |
+
+<details><summary>Screenshots</summary>
+<img src=>
+</details>
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+| None of the images load on page | Change all file paths to absolute |
+| Home page image too big causing performance issues | Reduce size of images | 
+| Text in quiz area overflowing on small screens | write media query to reduce font size on smaller screens |
+
+
+## Deployment
+
+
+## Credits
+
+
+## Acknowledgements
+I would like to take the opportunity to thank:
+- My mentor Mo Shami for his advice, guidance and support during this project.
+- My partner and friends for helping with testing and giving valuable feedback.
+- Code Institute tutor support for their help and advice.
+- The slack community as a whole for the support they provide.
+ 
