@@ -187,7 +187,7 @@
 - Once log in is successful the user is presented a welcome message displaying their chosen username.
 - User stories covered: 10
 
-![Personalised welcome message](docs/features/welcome-msg-after-login.png)
+![Personalised welcome message](docs/features/welcome-msg.png)
 
 ### Instructions
 - User is asked if they know how to play
