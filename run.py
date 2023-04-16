@@ -21,8 +21,8 @@ hidden_board = [['.' for _ in range(10)] for _ in range(10)]
 # Ships
 the_ships = [2, 2, 3, 3, 4, 5]
 
-# User
-current_user = {'name': 'Remo'}
+# Current user variable
+current_user = {'name': 'jay123'}
 
 
 def type_fast(string):
