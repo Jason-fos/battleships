@@ -40,26 +40,45 @@
 ## Project Goals 
 
 ### User Goals
-- 
+- Play a strategy based guesssing game.
+- A game that can be played against the computer.
+- Create a username and password for logging into the game.
+- Have fun.
 
 ### Site Owner Goals
-- 
+- Increase the number of users it has.
+- Relative information displayed to the user.
+- New users to sign up and create a username and password.
+- Fun easy intuitive easy to play game for all ages.
 
 ## User Experience
 
 ### Target Audience
-- 
-### User Requirements and Expectations
+- Anyone who wants to play the game.
+- There is no specific target audience.
 
--
+### User Requirements and Expectations
+- A simple and easy to play game.
+- Clear instructions for signing up.
+- Relavent information clearly displayed.
+- Simple easy to follow game instructions.
+- Everything should function as expected.
 
 ### User Stories
 
 #### Site User 
-1. 
+1. I want to be able to sign up and create a username.
+2. I want to be able to log in as a returning user.
+3. I want to see the game instructions before playing.
+4. I want the option to play again when the game ends.
 
 #### Site Owner 
-
+5. I want new users to be able to sign up by creating a username and password.
+6. I want returning users to be able to log in using their chosen information.
+7. I want relative and constant feedback displayed to the user during the game.
+8. I want all inut from the user to be validated to avoid errors.
+9. I want the user to be presented with a win or lose message on game completion.
+10. I want to provide a welcome message using the users chosen username. 
 ## Design
 
 ### Design Choices
