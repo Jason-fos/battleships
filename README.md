@@ -249,10 +249,14 @@
 </details>
 
 ### Performing tests on various devices 
+- acer aspire 3 
+- The game is not designed for mobile or tablet use so has not been tested on other devices other than pc/laptop.
 
 ### Browser compatability
 The website was tested on the following browsers:
--
+- Google Chrome
+- Microsoft Edge
+
 ### Testing user stories
 1.
 
