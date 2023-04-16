@@ -81,6 +81,21 @@
 10. I want to provide a welcome message using the users chosen username. 
 ## Design
 
+### How to play
+- The game is played on a 10x10 board.
+- Player and computer both get 6 ships each:
+    - 2 destroyers (2 grid spaces per ship)
+    - 2 subs (3 grid spaces per sub)
+    - 1 carrier (4 grid spaces)
+    - 1 battleship (5 grid spaces)
+- Each board will have the 6 ships randomly placed on 
+  them.
+- The ships will be concealed from each other.
+- Take in turns to choose X and Y coordinates to target 
+  the oponents ships.
+- You have unlimited amount of shots.
+- When all the computers ships are sunk you win unless the computer sinks yours first then  you lose.
+
 ### Design Choices
 - Battleships is a strategy based guessing game written in python and played 
   in a terminal window.
@@ -97,17 +112,23 @@
 - The structure of the game was designed to take turns between the player and computer.
 - On arrival to the game the logo is printed and the user is asked if they are a returning 
   user and to enter Y or N.
-- If N is entered then user is promted to sign up or if Y is entered user is promted to  
-  log in to play.
+- If N is entered then user is promted to sign up or if 
+  Y is entered user is promted to log in to play.
 - After log in/sign up is successful the game will start and ask the user if they have 
   played before, Y or N.
-- If N is entered then instructions are shown or if Y is entered the boards are printed to 
+- If N is entered then instructions are shown or if Y 
+  is entered the boards are printed to 
   the screen and the game begins.
 - The user and computer now take turns guessing X and Y axis to target each others ships 
   and ultimatley sink them.
-- The game finishes when user or computer has no ships left.
-- A win or lose message is printed to the screen and asks if user wants to play again.
-- If user wants to play again new boards are printed with new ship positions or if the     user enters N the game ends and user is displayed a goodbye message.
+- The game finishes when user or computer has no ships 
+  left.
+- A win or lose message is printed to the screen and 
+  asks if user wants to play again.
+- If user wants to play again new boards are printed 
+  with new ship positions
+- If the user enters N the game ends and user is 
+  displayed a goodbye message.
 
 
 ## Technologies Used
