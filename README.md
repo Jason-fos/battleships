@@ -144,13 +144,20 @@
 ## Technologies Used
 
 ### Languages
--
+- Python
 
-### Frameworks & Tools
-- Git
-- GitHub
-- Gitpod
-- Python tutor
+### Frameworks, Tools & Libraries
+- GitHub (saving and storing files)
+- Gitpod (was the IDE used for writing the code)
+- Python tutor (was used to find/fix errors in code)
+- os module (used to clear the terminal window)
+- random module (used to generate random numbers)
+- time module (used for slow/fast typing effect and to add pauses in the code for better ux)
+- sys module (used for typing effect and system exit to end game)
+- Lucidchart (used to build flowchart for logic planing)
+- Heroku (used to deploy the project)
+- Google sheets API (used to store and check user input and authorise identity)
+- Google OAuth (used to connect the project to the google account)
 
 ## Features
 
