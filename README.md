@@ -258,46 +258,47 @@ The website was tested on the following browsers:
 - Microsoft Edge
 
 ### Testing user stories
-1.
+1. I want to be able to sign up and create a username.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Navigation link | Click the Go To Quiz link from the navigation menu | Take user to the quiz page | Works as expected |
+| Sign up | Select N when asked if returning user and follow sign up instructions | Take user through sign up process | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
-<img src=>
+<img src="docs/features/intro-returning-user.png" alt="screenshot of intro screen">
+<img src="docs/features/sign-up-instructions" alt="screenshot of sign up screen">
 </details>
 
-2. 
+2. I want to be able to log in as a returning user.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Rules and Scoring section | Clearly displayed on the home page | Provide information on the rules and scoring | Works as expected |
-| Toggle rules button in footer | Click rules button in footer | Toggle the rules from hidden to visible | Works as expected |
+| Returning user login | When asked if returning user select Y and enter login details where asked | Provide user a way to log into the game | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
-
+<img src="docs/features/intro-returning-user.png" alt="screenshot of intro screen">
+<img src="docs/features/returning-user-login.png" alt="screenshot of login screen">
 </details>
 
-3.  
+3. I want to see the game instructions before playing.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| right/wrong message| click submit answer button in the quiz | Display right or wrong answer message to user | Works as expected |
+| Instructions | Select N when asked if know how to play | Display instructions to user | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/welcome-msg-after-login.png" alt="screenshot of welcome message and logo screen">
+<img src="docs/features/game-instructions.png" alt="screenshot of login screen">
 </details>
 
-4. 
+4. I want the option to play again when the game ends.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Current Score | Top left corner of the quiz area provides a score | Display the score to the user | Works as expected |
+| Play again | At end of the game user is asked if they want to play again and enter Y or N | Give user the option to play again | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/win-lose-play-again-msg.png" alt="screenshot of the play again message on screen">
+<img src="docs/features/boards-reset.png" alt="screenshot of the game restarted with the boards and ships reset">
 </details>
 
 5.
