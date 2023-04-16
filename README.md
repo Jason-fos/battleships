@@ -1,7 +1,7 @@
 # Battleships
 (Developer: Jason Foster)
 
-![Mockup image]()
+![Mockup image](/docs/features/battleships-mockup.png)
 
 [Live webpage](https://battleships-p.herokuapp.com/)
 
