@@ -133,7 +133,13 @@
 ## Technical Design
 
 ### Flowchart
+- [Lucidchart](https://www.lucidchart.com) was used to build the flowchart to help plan the logic for the game.
 
+<details>
+    <summary>Flowchart</summary>
+    <p>Battleships Flowchart</p>
+    <img src = "docs/flowchart/battleships-flowchart.png" alt = "screenshot of battleships flowchart">
+</details>
 
 ## Technologies Used
 
