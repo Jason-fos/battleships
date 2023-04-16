@@ -126,6 +126,7 @@ def new_user_info():
     print('')
     type_slow('The username and password are case sensitive\n')
     type_slow('They should both be a minimum of 6 characters long\n')
+    type_slow('And contain no blank spaces\n')
     time.sleep(0.5)
     print('')
     username_input = input('Please enter desired username\n')

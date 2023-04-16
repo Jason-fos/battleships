@@ -53,6 +53,10 @@ def validate_info(user, password):
             raise ValueError(
                 'Username and password need to be min of 6 characters\n'
                 )
+        elif ' ' in user or ' ' in password:
+            raise ValueError(
+                    'Username and password must not contain spaces\n'
+                )
     except ValueError:
         print('Input not valid')
         return False
@@ -69,7 +73,7 @@ def validate_info(user, password):
     try:
         if not (isinstance(user, str) or isinstance(password, str)):
             raise TypeError(
-                'Please enter letters only\n'
+                'Please enter valid input\n'
             )
     except TypeError as t_e:
         print(f'Input not valid: {t_e}')
