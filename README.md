@@ -191,7 +191,7 @@
 ![Personalised welcome message](docs/features/welcome-msg-after-login.png)
 
 ### Instructions
-- User is asked if thy know how to play
+- User is asked if they know how to play
 - If N then they are displayed the game instructions
 - If Y then the ships are printed to the boards and boards printed to the screen to start the game.
 - User stories covered: 3, 7
@@ -212,7 +212,7 @@
 
 ### Win/lose, play again message
 - On game completion the user is displayed a win or lose message followed by asking if they want to play again.
-- User stories covered: 7, 4
+- User stories covered: 9, 7, 4
 
 ![Win/los, play again message](docs/features/win-lose-play-again-msg.png)
 
@@ -220,8 +220,8 @@
 - If user decides to play again then the screen is cleared and new ships positions are printed to new game boards.
 - User stories covered: 7, 4
 
+![play again message](docs/features/win-lose-play-again-msg.png)
 ![Play again, board reset](docs/features/boards-reset.png)
-![game over or win display]()
 
 ### Input validation
 - If user inputs invalid data then they are notified with an error warning on screen asking to input valid data only.
@@ -232,8 +232,21 @@
 
 ## Validation
 
-### PEP8 Validation
+### PEP8 Python linter
+- [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Code Institute was used to lint the code.
+- Sheet.py passes with no warnings or errors to show.
+- Run.py has no errors and the warnings that are left are due to how the battleship logo is written but it has no effect on how the game or code runs.
 
+<details>
+    <summary>sheet.py</summary>
+    <p>Result: sheet.py</p>
+    <img src = "docs/validation/sheet.py-validation.png" alt = "screenshot of sheet.py result">
+</details>
+<details>
+    <summary>run.py</summary>
+    <p>Result: run.py</p>
+    <img src = "docs/validation/run.py-validation.png" alt = "screenshot of run.py result">
+</details>
 
 ### Performing tests on various devices 
 
