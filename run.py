@@ -368,7 +368,7 @@ def start_game():
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
-        if count_hits(cpu_board) == 1:
+        if count_hits(cpu_board) == 19:
             type_slow('You win! Well done captain!\n')
             print('')
             type_slow('Want to play again?\n')
