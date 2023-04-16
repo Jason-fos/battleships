@@ -366,8 +366,7 @@ The website was tested on the following browsers:
 | **Bug** | **Fix** |
 | ----------- | ----------- |
 | The boards were printing to the screen and starting the game before the user had chance to read the instructions | Add while loop to show instructions function so user has to enter Y when ready or N to leave the game |
-|  | 
-|  | |
+| When user targets the same coordinates twice they are asked to try again but when new coordinates are entered the user seems to miss their go for that turn | not fixed yet |
 
 
 ## Deployment
