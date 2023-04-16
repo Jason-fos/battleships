@@ -365,9 +365,9 @@ The website was tested on the following browsers:
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| None of the images load on page | Change all file paths to absolute |
-| Home page image too big causing performance issues | Reduce size of images | 
-| Text in quiz area overflowing on small screens | write media query to reduce font size on smaller screens |
+| The boards were printing to the screen and starting the game before the user had chance to read the instructions | Add while loop to show instructions function so user has to enter Y when ready or N to leave the game |
+|  | 
+|  | |
 
 
 ## Deployment
