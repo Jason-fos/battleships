@@ -38,7 +38,6 @@
 11. [Acknowledgements](#acknowledgements)
 
 ## Project Goals 
-
 ### User Goals
 - Play a strategy based guesssing game.
 - A game that can be played against the computer.
