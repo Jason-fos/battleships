@@ -75,8 +75,8 @@
 #### Site Owner 
 5. I want new users to be able to sign up by creating a username and password.
 6. I want returning users to be able to log in using their chosen information.
-7. I want relative and constant feedback displayed to the user during the game.
-8. I want all inut from the user to be validated to avoid errors.
+7. I want relative and constant feedback displayed to the user.
+8. I want all input from the user to be validated to avoid errors.
 9. I want the user to be presented with a win or lose message on game completion.
 10. I want to provide a welcome message using the users chosen username. 
 ## Design
@@ -162,45 +162,72 @@
 ## Features
 
 
-### Logo and Navigation Bar
-- 
-![]()
+### Logo, returning user log in
+- After the logo prints to the screen the user is asked if they are a returning user
+- If Y then they are promted to log in
+- If N they are prompted to sign up
+- User stories covered: 2, 6
 
-### Rules and Scoring section
-- 
+![Logo, returning user log in](docs/features/returning-user-login.png)
 
-![rules and scoring section]()
+### Sign up prompt and instructions
+- If the user is not a returning user then they are asked to sign up to play
+- Followed by sign up instructions
+- User stories covered: 1, 5
 
-### Rules and scoring toggle button
--
+![Sign up prompt and instructions](docs/features/sign-up-instructions.png)
 
-![rules and scoring toggle button]()
+### Sign up confirmation, log in
+- Once the user has created a username and password a message appears on screen confirming sign up success
+- Followed by a prompt to log in using their new user and password.
+- User stories covered: 7
 
-### Create Username
-- 
-![create username]()
+![Sign up confirmation, log in](docs/features/sign-up-confirmation.png)
 
-### Right Or Wrong Answer Message To User
-- 
+### Personalised welcome message
+- Once log in is successful the user is presented a welcome message displaying their chosen username.
+- User stories covered: 10
 
-![right or wrong answer message]()
-![right or wrong answer message]()
+![Personalised welcome message](docs/features/welcome-msg-after-login.png)
 
-### Current Score
-- 
+### Instructions
+- User is asked if thy know how to play
+- If N then they are displayed the game instructions
+- If Y then the ships are printed to the boards and boards printed to the screen to start the game.
+- User stories covered: 3, 7
 
-![current score]()
+![instructions Y or N](docs/features/game-instructions.png)
 
-### Quiz Question Progress
--
+### Game boards
+- Once user is ready to play the boards are printed to the screen.
+- User stories covered: 7
 
-![quiz question progress]()
+![Game boards start](docs/features/player-cpu-boards-startgame.png)
+![Game boards midplay](docs/features/cpu%26player-board-ingame.png)
 
-### Game Over Or Win Display
-- 
+### User input and feedback
+- After each turn the user recieves feedback on whether they hit the target or missed and whether the computer hit or missed.
+- User stories covered: 7
+![User input and feedback](docs/features/user-input-feedback.png)
 
+### Win/lose, play again message
+- On game completion the user is displayed a win or lose message followed by asking if they want to play again.
+- User stories covered: 7, 4
+
+![Win/los, play again message](docs/features/win-lose-play-again-msg.png)
+
+### Play again, boards reset
+- If user decides to play again then the screen is cleared and new ships positions are printed to new game boards.
+- User stories covered: 7, 4
+
+![Play again, board reset](docs/features/boards-reset.png)
 ![game over or win display]()
-![game over or win display]()
+
+### Input validation
+- If user inputs invalid data then they are notified with an error warning on screen asking to input valid data only.
+- User stories covered: 8
+
+![Input validation](docs/features/input-validation.png)
 
 
 ## Validation
