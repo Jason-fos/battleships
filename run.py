@@ -368,13 +368,15 @@ def start_game():
     while True:
         time.sleep(0.3)
         player_guess(cpu_board, hidden_board)
-        if count_hits(cpu_board) == 19:
+        if count_hits(cpu_board) == 1:
             type_slow('You win! Well done captain!\n')
             print('')
             type_slow('Want to play again?\n')
             answer = input('Y or N \n').upper()
             while True:
                 if answer == 'Y':
+                    time.sleep(1)
+                    os.system('clear')
                     play_again()
                 elif answer == 'N':
                     type_slow('See you next time captain!\n')
