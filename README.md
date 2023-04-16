@@ -82,13 +82,32 @@
 ## Design
 
 ### Design Choices
-
-### Colour
+- Battleships is a strategy based guessing game written in python and played 
+  in a terminal window.
+- As this game is played in a terminal window I have opted to keep things simple.
+- The battleship logo prints to the screen using a fast typing effect that spells out 
+  battleships.
+- The background is black and text white by default which I have left as the white stands 
+  out and makes the text easy to read. 
  
 <br>
 
 
 ### Structure
+- The structure of the game was designed to take turns between the player and computer.
+- On arrival to the game the logo is printed and the user is asked if they are a returning 
+  user and to enter Y or N.
+- If N is entered then user is promted to sign up or if Y is entered user is promted to  
+  log in to play.
+- After log in/sign up is successful the game will start and ask the user if they have 
+  played before, Y or N.
+- If N is entered then instructions are shown or if Y is entered the boards are printed to 
+  the screen and the game begins.
+- The user and computer now take turns guessing X and Y axis to target each others ships 
+  and ultimatley sink them.
+- The game finishes when user or computer has no ships left.
+- A win or lose message is printed to the screen and asks if user wants to play again.
+- If user wants to play again new boards are printed with new ship positions or if the     user enters N the game ends and user is displayed a goodbye message.
 
 
 ## Technologies Used
