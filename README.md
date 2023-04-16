@@ -301,63 +301,64 @@ The website was tested on the following browsers:
 <img src="docs/features/boards-reset.png" alt="screenshot of the game restarted with the boards and ships reset">
 </details>
 
-5.
+5. I want new users to be able to sign up by creating a username and password.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Create username | Click go to quiz in nav menu, enter username where prompted and click submit | Create a username | Works as expected |
+| Sign up | Enter N when asked if returning user | Allow new users to sign up | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/intro-returning-user.png" alt="screenshot of logo and returing user message">
+<img src="docs/features/sign-up-instructions.png" alt="screenshot of sign up instructions">
 </details>
 
-6. 
+6. I want returning users to be able to log in using their chosen information.
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Quiz progress | Top right corner of quiz area displays quiz progress | To display the quiz progress to the user | Works as expected |
+| Returing user log in | Enter Y when asked if returning user | To allow the user to log in | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/intro-returning-user.png" alt="screenshot of intro screen">
+<img src="docs/features/returning-user-login.png" alt="screenshot of login screen">
 </details>
 
-7.
+7. I want relative and constant feedback displayed to the user.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Navigation bar | Click links in nav menu | Navigate around the site | Works as expected |
+| User feedback | After each turn the user is given feedback on if they hit or missed and if the CPU hit or missed | Provide user with feedback during the game | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src="docs/user-story-testing/user-story-7.png">
+<img src="docs/features/user-input-feedback.png" alt="screenshot of the feedback to the user on the screen">
 </details>
 
-8. 
+8. I want all input from the user to be validated to avoid errors.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Rules and scoring section | Clearly displayed on home page | Clearly display information to the user | Works as expected |
-| Quiz area | go to quiz page and start quiz | Clearly display information to the user | Works as expected |
+| Input validation | When invalid data is entered the user gets an error message | To provide user with error message and avoid invalid data entries | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/input-validation.png" alt="screenshot of error messages displayed to user">
 </details>
 
-9. 
+9. I want the user to be presented with a win or lose message on game completion.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Game over/Win message | Lose or complete the quiz | Display game over or win message to user | Works as expected |
+| Win/Lose message | Win or Lose the game | Display a Win or Lose message to the user | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src>
+<img src="docs/features/win-lose-play-again-msg.png" alt="screenshot of the win message on the screen">
 </details>
 
-10. 
+10. I want to provide a welcome message using the users chosen username.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| 404 page | Click any link in navigation bar to return to site | Prevent user from using browser back arrows | Works as expected |
+| Welcome message | Log into game using your login details | Provide user with welcome message using their username | Works as expected |
 
 <details><summary>Screenshots</summary>
-<img src=>
+<img src="docs/features/welcome-msg.png" alt="screenshot of the welcome message to users">
 </details>
 
 ## Bugs
